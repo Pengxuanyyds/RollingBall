@@ -1,6 +1,8 @@
 # RollingBall
 Unity project of course DASE7141
 
+Unity version: 2022.3.4f1c1
+
 基本功能：  
 1、小球向前运动，玩家操控键盘左右键控制方向。  
 2、小球撞到障碍物减生命值，障碍物被撞到后有破碎效果。  
