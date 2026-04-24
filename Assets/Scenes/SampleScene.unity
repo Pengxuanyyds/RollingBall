@@ -844,6 +844,7 @@ GameObject:
   - component: {fileID: 625610831}
   - component: {fileID: 625610830}
   - component: {fileID: 625610829}
+  - component: {fileID: 625610835}
   - component: {fileID: 625610834}
   m_Layer: 0
   m_Name: Player
@@ -872,6 +873,19 @@ MonoBehaviour:
   bestScoreText: {fileID: 828737155}
   gameOverPanel: {fileID: 150617144}
   prefabMusic: {fileID: 6993141169131013512, guid: 29c703eccca8b844db2cff5ba3f89d1c, type: 3}
+--- !u!114 &625610835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625610828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77715ea3dc4d4ab8ad84584bf4294e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualRadius: 0.5
 --- !u!135 &625610830
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -913,7 +927,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 511e1e0cd6c948bfa15c1ebc58e8e4f7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
