@@ -1,47 +1,78 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CapsuleCollider))]
 public class Bonus : MonoBehaviour
 {
-    // 定义收集事件
+    [Header("Scan Visual")]
+    public GameObject visualPrefab;
+    public string visualResourcePath = "BonusObjects/999";
+    public Vector3 maxVisualSize = new Vector3(0.9f, 1.4f, 0.9f);
+    public float minLargestVisualSize = 0.6f;
+
     public delegate void BonusCollectedAction();
     public static event BonusCollectedAction OnBonusCollected;
 
-    private bool hasCollected = false;
+    private bool hasCollected;
+    private CapsuleCollider hitCollider;
+    private GameObject visualInstance;
 
-    private void OnTriggerEnter(Collider other)
+    private void Awake()
     {
-        if (hasCollected) return;
-        if (other.CompareTag("Player") || other.name == "Player")
-        {
-            hasCollected = true;
-
-            // 发出加血信号
-            OnBonusCollected?.Invoke();
-
-            // 隐藏自己
-            GetComponent<MeshRenderer>().enabled = false;
-            GetComponent<Collider>().enabled = false;
-        }
+        SetupCollider();
+        EnsureVisualReady();
     }
 
     private void OnEnable()
     {
         hasCollected = false;
-        GetComponent<MeshRenderer>().enabled = true;
-        GetComponent<Collider>().enabled = true;
+        EnsureVisualReady();
+        ScanVisualUtility.SetVisible(transform, visualInstance, true);
+        ScanVisualUtility.SetOnlyMainColliderEnabled(transform, hitCollider, true);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (hasCollected || (!other.CompareTag("Player") && other.name != "Player")) return;
+
+        hasCollected = true;
+        OnBonusCollected?.Invoke();
+        ScanVisualUtility.SetVisible(transform, visualInstance, false);
+        ScanVisualUtility.SetOnlyMainColliderEnabled(transform, hitCollider, false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void EnsureVisualReady()
     {
-        
+        SetupCollider();
+        if (visualInstance != null) return;
+
+        GameObject visual = Resources.Load<GameObject>(visualResourcePath);
+        if (visual == null) visual = visualPrefab;
+
+        visualInstance = ScanVisualUtility.InstantiateChild(visual, transform, "bonus");
+        if (visualInstance == null) return;
+
+        ScanVisualUtility.SetRootRendererEnabled(transform, false);
+        FitVisualCollider();
     }
+
+    private void SetupCollider()
+    {
+        if (hitCollider == null)
+        {
+            hitCollider = GetComponent<CapsuleCollider>();
+        }
+
+        hitCollider.isTrigger = true;
+    }
+
+    private void FitVisualCollider()
+    {
+        Bounds bounds = ScanVisualUtility.FitToBounds(transform, visualInstance, maxVisualSize, minLargestVisualSize);
+        if (bounds.size == Vector3.zero) return;
+
+        hitCollider.center = bounds.center;
+        hitCollider.radius = Mathf.Clamp(Mathf.Max(bounds.extents.x, bounds.extents.z) * 0.45f, 0.18f, 0.45f);
+        hitCollider.height = Mathf.Max(bounds.size.y, hitCollider.radius * 2f);
+    }
+
 }

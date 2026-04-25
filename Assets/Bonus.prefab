@@ -120,3 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f748538aadc35bd4a998519a44cb52d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visualPrefab: {fileID: 0}
+  visualResourcePath: BonusObjects/999
+  maxVisualSize: {x: 0.9, y: 1.4, z: 0.9}
+  minLargestVisualSize: 0.6
