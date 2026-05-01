@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5549250864540981523
+--- !u!1 &4962724286506267307
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3402948011530872599}
-  - component: {fileID: 7445906747707224009}
-  - component: {fileID: 6410188294270321221}
-  - component: {fileID: 7523477298637192779}
-  - component: {fileID: -7141422657742246900}
+  - component: {fileID: 5982714984710903633}
+  - component: {fileID: 7010726942304868850}
+  - component: {fileID: 6915539050545586007}
+  - component: {fileID: 9160069698611940932}
   m_Layer: 0
-  m_Name: Barrier
+  m_Name: SideScenery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3402948011530872599
+--- !u!4 &5982714984710903633
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5549250864540981523}
+  m_GameObject: {fileID: 4962724286506267307}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7445906747707224009
+--- !u!33 &7010726942304868850
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5549250864540981523}
+  m_GameObject: {fileID: 4962724286506267307}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &6410188294270321221
+--- !u!23 &6915539050545586007
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5549250864540981523}
+  m_GameObject: {fileID: 4962724286506267307}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -85,49 +84,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7523477298637192779
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5549250864540981523}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-7141422657742246900
+--- !u!114 &9160069698611940932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5549250864540981523}
+  m_GameObject: {fileID: 4962724286506267307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ad4be5a0e205004fba0f7d1f09b9774, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f61c44f1b474fa2be99f8ad7a5f5b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyEffectPrefab: {fileID: 5479649323418913838, guid: b6417639b979e9d47adefaaab19e70b6, type: 3}
   visualPrefabs: []
   resourcesFolder: Objects
   resourceVisualNames:
-  - bin
-  - Caution
-  - chair
-  - obstacle
   - reading51
   - Trophy
-  - wash
-  maxVisualSize: {x: 1.3, y: 2.2, z: 1.6}
-  minLargestVisualSize: 0.9
+  maxVisualSize: {x: 13.6, y: 19, z: 13.6}
+  minLargestVisualSize: 8.4
+  randomizeYaw: 1

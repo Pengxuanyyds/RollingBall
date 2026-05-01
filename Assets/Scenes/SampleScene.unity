@@ -1919,6 +1919,7 @@ MonoBehaviour:
   player: {fileID: 625610833}
   barrierPrefab: {fileID: 5549250864540981523, guid: 9a36593557f94dc459d48255d1def588, type: 3}
   bonusPrefab: {fileID: 1732129156407977345, guid: 6e1633642ccdf6a419c924208c00f1b4, type: 3}
+  sideSceneryPrefab: {fileID: 4962724286506267307, guid: 7f288dc7609f4ea9ae0cd02072be8cf1, type: 3}
   spawnDistanceAhead: 400
   despawnDistanceBehind: 30
   rowInterval: 50
@@ -1926,6 +1927,12 @@ MonoBehaviour:
   keepOneLaneOpen: 1
   groundSurfaceY: 0.5
   obstacleUniformScaleRange: {x: 0.95, y: 1.1}
+  sideSceneryRowInterval: 900
+  sideSceneryDensity: 0.12
+  sideSceneryScaleRange: {x: 1.35, y: 1.9}
+  sideSceneryY: 0.5
+  leftSceneryX: -10.5
+  rightSceneryX: 10.5
 --- !u!1 &1962483286
 GameObject:
   m_ObjectHideFlags: 0

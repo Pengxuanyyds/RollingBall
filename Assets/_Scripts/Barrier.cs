@@ -9,7 +9,7 @@ public class Barrier : MonoBehaviour
     [Header("Scan Visual")]
     public GameObject[] visualPrefabs;
     public string resourcesFolder = "Objects";
-    public string[] resourceVisualNames = { "bin", "Caution", "chair", "obstacle", "wash" };
+    public string[] resourceVisualNames = { "bin", "Caution", "chair", "obstacle", "reading51", "Trophy", "wash" };
     public Vector3 maxVisualSize = new Vector3(1.3f, 2.2f, 1.6f);
     public float minLargestVisualSize = 0.9f;
 
